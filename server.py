@@ -1,4 +1,4 @@
-import socket
+import sock as sock
 import sys
 
 
@@ -8,9 +8,9 @@ def create_socket():
         global port
         global s
         host = ''
-        port = 1234
-        s = socket.socket()
-    except socket.error as msg:
+        port = 8080
+        s = sock.socket()
+    except sock.error as msg:
         print('Socket cant be created !' + str(msg))
 
 
@@ -20,7 +20,7 @@ def bind_socket():
         print('Socket binding done')
         s.listen(5)
         print('Now listening at port {}.....'.format(port))
-    except socket.error as msg:
+    except sock.error as msg:
         print('Socket binding failed! ' + str(msg) + '\nRetrying...')
         bind_socket()
 
