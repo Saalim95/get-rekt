@@ -22,6 +22,7 @@ def bind_socket():
         print('Now listening at port {}.....'.format(port))
     except socket.error as msg:
         print('Socket binding failed! ' + str(msg) + '\nRetrying...')
+        print('retry')
         bind_socket()
 
 
